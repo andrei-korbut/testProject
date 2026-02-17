@@ -1,4 +1,4 @@
-# BE-XX – <Endpoint Name>
+# XX – <Endpoint Name>
 
 ## 📌 Use Case Description
 Describe the functional behavior in human language.

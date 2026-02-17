@@ -1,4 +1,4 @@
-# FE-01 – Get Product List
+# 01 – Get Product List
 
 ## 📌 Use Case Description
 

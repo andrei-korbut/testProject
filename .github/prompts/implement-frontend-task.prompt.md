@@ -15,7 +15,7 @@ You must strictly follow the workflow below.
 
 ## 🔎 Mandatory Pre-Implementation Checks
 
-1. Read: tasks/[category]/${input:taskNumber}-*.md
+1. Read: tasks/frontend/${input:taskNumber}-*.md
 2. Open: tasks/Progress.md
    - Verify the task is NOT already marked as completed.
    - If completed → stop and report.

@@ -1,9 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using ProductManagementApi.Data;
+using ProductManagementApi.Repositories;
+using ProductManagementApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -34,6 +41,12 @@ Console.WriteLine($"Using connection string: {maskedConnectionString}");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+// Register repositories
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+// Register services
+builder.Services.AddScoped<IProductService, ProductService>();
+
 // Configure logging
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
@@ -53,6 +66,9 @@ if (app.Environment.IsDevelopment())
 
 // Enable CORS
 app.UseCors();
+
+// Map controllers
+app.MapControllers();
 
 // Health check endpoint
 app.MapGet("/health", async (AppDbContext dbContext) =>

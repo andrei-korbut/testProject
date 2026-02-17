@@ -12,3 +12,15 @@ This file tracks completed implementation tasks. Add task file name and completi
   - Health check endpoint implemented
   - Docker Compose multi-container setup
   - Swagger/OpenAPI documentation added
+
+### Backend
+- ✅ **[02-create-product.md](backend/02-create-product.md)** - Completed on February 17, 2026
+  - Product entity with ProductType enum created
+  - Generic Repository pattern implemented (IRepository<T> and Repository<T>)
+  - ProductRepository with name uniqueness check
+  - CreateProductDto and ProductDto created with validation
+  - ProductService implemented with business logic
+  - POST /products endpoint in ProductsController
+  - Database migration for Products table with unique index on Name
+  - 3-layer architecture (Controller → Service → Repository) followed
+  - All validation rules and status codes implemented

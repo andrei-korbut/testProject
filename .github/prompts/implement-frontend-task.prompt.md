@@ -19,8 +19,11 @@ You must strictly follow the workflow below.
 2. Open: tasks/Progress.md
    - Verify the task is NOT already marked as completed.
    - If completed → stop and report.
-3. Read relevant sections in: docs/mvp_srs.md
+3. Read relevant sections in: docs/project-description.md
 4. Verify all task dependencies are completed in Progress.md.
+5. Find necessary backend endpoints in the /backend project folder, analyze if everything is ready to complete the frontend task. If not, report the missing backend functionality and stop.
+6. Once all checks are passed, confirm the task is valid and not yet completed, then proceed to implementation.
+7. When frontend app code is ready and tested on its own, run the full dockerized environment (frontend + backend + database) to verify that frontend features work correctly with the backend API and database.
 
 Only proceed if the task is valid and not yet completed.
 
